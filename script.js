@@ -1,11 +1,12 @@
 document.getElementById('add-task').addEventListener('click', function() {
     const title = document.getElementById('task-title').value;
     const job = document.getElementById('task-job').value;
-    if (title) {
+    const time = document.getElementById('task-time').value;
+    if (title && time) {
         const taskSection = document.getElementById(`tasks-${job}`);
         const task = document.createElement('div');
         task.className = 'notification is-primary';
-        task.innerHTML = `${title} <button class="delete"></button>`;
+        task.innerHTML = `${title} - ${time} hour(s) <button class="delete"></button>`;
         taskSection.appendChild(task);
         document.getElementById('task-title').value = '';
 
