@@ -3,26 +3,57 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Blog</title>
+    <title>Task Manager</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css">
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <header>
-        <h1>My Blog</h1>
-    </header>
-    <main>
-        <section id="blog-posts">
-            <!-- Blog posts will be inserted here -->
-        </section>
-        <section id="new-post">
-            <h2>New Post</h2>
-            <form id="post-form">
-                <input type="text" id="title" placeholder="Title" required><br>
-                <textarea id="content" placeholder="Content" required></textarea><br>
-                <button type="submit">Post</button>
-            </form>
-        </section>
-    </main>
+    <section class="section">
+        <div class="container">
+            <h1 class="title">Task Manager</h1>
+            <div class="columns">
+                <div class="column" id="job-a">
+                    <h2 class="subtitle">Job A</h2>
+                    <div class="box" id="tasks-job-a">
+                        <!-- Tasks for Job A will be inserted here -->
+                    </div>
+                </div>
+                <div class="column" id="job-b">
+                    <h2 class="subtitle">Job B</h2>
+                    <div class="box" id="tasks-job-b">
+                        <!-- Tasks for Job B will be inserted here -->
+                    </div>
+                </div>
+                <div class="column" id="job-c">
+                    <h2 class="subtitle">Job C</h2>
+                    <div class="box" id="tasks-job-c">
+                        <!-- Tasks for Job C will be inserted here -->
+                    </div>
+                </div>
+            </div>
+            <div class="field">
+                <label class="label">New Task</label>
+                <div class="control">
+                    <input class="input" type="text" id="task-title" placeholder="Task Title">
+                </div>
+            </div>
+            <div class="field">
+                <label class="label">Select Job</label>
+                <div class="control">
+                    <div class="select">
+                        <select id="task-job">
+                            <option value="job-a">Job A</option>
+                            <option value="job-b">Job B</option>
+                            <option value="job-c">Job C</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+            <div class="control">
+                <button class="button is-primary" id="add-task">Add Task</button>
+            </div>
+        </div>
+    </section>
     <script src="script.js"></script>
 </body>
 </html>

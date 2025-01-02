@@ -1,12 +1,16 @@
-document.getElementById('post-form').addEventListener('submit', function(event) {
-    event.preventDefault();
-    const title = document.getElementById('title').value;
-    const content = document.getElementById('content').value;
-    if (title && content) {
-        const postSection = document.getElementById('blog-posts');
-        const post = document.createElement('article');
-        post.innerHTML = `<h2>${title}</h2><p>${content}</p>`;
-        postSection.appendChild(post);
-        document.getElementById('post-form').reset();
+document.getElementById('add-task').addEventListener('click', function() {
+    const title = document.getElementById('task-title').value;
+    const job = document.getElementById('task-job').value;
+    if (title) {
+        const taskSection = document.getElementById(`tasks-${job}`);
+        const task = document.createElement('div');
+        task.className = 'notification is-primary';
+        task.innerHTML = `${title} <button class="delete"></button>`;
+        taskSection.appendChild(task);
+        document.getElementById('task-title').value = '';
+
+        task.querySelector('.delete').addEventListener('click', function() {
+            task.remove();
+        });
     }
 });
